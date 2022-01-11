@@ -98,28 +98,111 @@
 // for (let i = 0; i < arrobj.length; i++) {
 
 // }
-function lookUpProfile(name, prop) {
-    for (let x = 0; x < contacts.length; x++) {
-        if (contacts[x].firstName === name) {
-            if (contacts[x].hasOwnProperty(prop)) {
-                return contacts[x][prop];
-            } else {
-                return "Không có thuộc tính trên ";
-            }
-        }
+// function lookUpProfile(name, prop) {
+//     for (let x = 0; x < contacts.length; x++) {
+//         if (contacts[x].firstName === name) {
+//             if (contacts[x].hasOwnProperty(prop)) {
+//                 return contacts[x][prop];
+//             } else {
+//                 return "Không có thuộc tính trên ";
+//             }
+//         }
+//     }
+//     return "Không tồn tại thông tin trên";
+// }
+
+// function lookUpProfile(name, prop) {
+//     for (let i = 0; i < contacts.length; i++) {
+//         if (contacts[i].firstName === name) {
+//             if (prop in contacts[i]) {
+//                 return contacts[i][prop];
+//             } else {
+//                 return "Không có thuộc tính trên ";
+//             }
+//         }
+//     }
+//     return "Không tồn tại thông tin trên";
+// }
+
+
+const contacts = [
+    {
+      firstName: "Van",
+      lastName: "Nguyen",
+      number: "0543236543",
+      likes: ["Pizza", "Coding", "Pho"],
+    },
+    {
+      firstName: "Son",
+      lastName: "Trinh",
+      number: "0994372684",
+      likes: ["Cheese", "Donut", "Apple"],
+    },
+    {
+      firstName: "Trong",
+      lastName: "Le",
+      number: "0487345643",
+      likes: ["Beer", "King Crab"],
+    },
+    {
+      firstName: "Tong",
+      lastName: "Vo",
+      number: "unknown",
+      likes: ["Tiger", "Sword", "Wine"],
+    },
+  ];
+
+
+  //co du dung bien obj[var] =value;
+  // obj['key'] = value
+  function lookUpProfile(name, prop) {
+    let x = contacts.length;
+    for(let i = 0;i<x;i++){
+      if(contacts[i].firstName === name){
+        //if(prop in contacts[i])
+       if(goiProperties(i,prop)){
+
+       }else{
+         
+       }
+       
+      }
+
     }
     return "Không tồn tại thông tin trên";
+  }
+  
+
+function goiProperties(i,prop){
+  if(contacts[i].hasOwnProperty(prop)){///gọi prop trog obj
+    return true;
+  }
+  else{
+    return false;
+  }
 }
 
-function lookUpProfile(name, prop) {
-    for (let i = 0; i < contacts.length; i++) {
-        if (contacts[i].firstName === name) {
-            if (prop in contacts[i]) {
-                return contacts[i][prop];
-            } else {
-                return "Không có thuộc tính trên ";
-            }
-        }
-    }
-    return "Không tồn tại thông tin trên";
-}
+
+
+
+
+
+
+
+
+
+
+// function lookUpProfile(name, prop) {
+//     for (let x = 0; x < contacts.length; x++) {
+//         if (contacts[x].firstName === name) {
+//             if (contacts[x].hasOwnProperty(prop)) {
+//                 return contacts[x][prop];
+//             } else {
+//                 return "Không có thuộc tính trên ";
+//             }
+//         }
+//     }
+//     return "Không tồn tại thông tin trên";
+// }
+
+ 
